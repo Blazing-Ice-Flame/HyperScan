@@ -3,60 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your Manga Translations</title>
+    <title>Translated Manga Upload</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Your Manga Translations</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#manga">Manga</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <h1>Upload Your Translated Manga</h1>
+        
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="mangaTitle">Manga Title:</label>
+            <input type="text" id="mangaTitle" name="mangaTitle" required>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Welcome to my manga translation website! I specialize in translating [genre] manga for fans around the world. Enjoy browsing through my collection!</p>
-        </div>
-    </section>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
 
-    <section id="manga" class="section">
-        <div class="container">
-            <h2>My Translations</h2>
-            <div class="gallery">
-                <div class="manga-item">
-                    <img src="manga1.jpg" alt="Manga 1">
-                    <h3>Manga Title 1</h3>
-                    <p><a href="manga1.pdf" download>Download Translation</a></p>
-                </div>
-                <div class="manga-item">
-                    <img src="manga2.jpg" alt="Manga 2">
-                    <h3>Manga Title 2</h3>
-                    <p><a href="manga2.pdf" download>Download Translation</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <label for="mangaFiles">Upload Manga Pages (images):</label>
+            <input type="file" id="mangaFiles" name="mangaFiles" accept="image/*" multiple required>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>If you have any questions or would like to collaborate, feel free to <a href="mailto:yourname@example.com">email me</a>.</p>
-        </div>
-    </section>
+            <button type="submit">Upload</button>
+        </form>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        <div id="gallery">
+            <!-- Uploaded manga will be displayed here -->
         </div>
-    </footer>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
